@@ -11,3 +11,4 @@
 *.zip
 *.json
 *.terraform.lock*
+credentials_block*

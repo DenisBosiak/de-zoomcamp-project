@@ -3,7 +3,7 @@ import pandas as pd
 import pyarrow as pa
 import pyarrow.parquet as pq
 from prefect import flow, task
-from prefect_gcp.cloud_storage import GcsBucket
+from prefect_gcp import GcpCredentials, GcsBucket
 
 
 dataset_name = "public-bike-sharing-in-north-america"
@@ -61,7 +61,12 @@ def convert_to_parquet(folder: str, file: str, folder_parquet: str) -> str :
 @task()
 def upload_to_gcs(path: str) -> None:
     """Upload local parquet file to GCS"""
-    bucket = GcsBucket.load("de-bucket")
+    credentials = GcpCredentials.load("de-project-credentials")
+    #bucket = GcsBucket.load("de-bucket")
+    bucket = GcsBucket(
+        bucket="dtc-de-project-data-lake",
+        gcp_credentials=credentials
+    )
     bucket.upload_from_path(from_path=path, to_path=path)
     return
 

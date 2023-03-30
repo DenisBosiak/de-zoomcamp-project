@@ -4,4 +4,3 @@ protobuf==4.21.11
 pyarrow==10.0.1
 pandas-gbq==0.18.1
 kaggle
-unzip
