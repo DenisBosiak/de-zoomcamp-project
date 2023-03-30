@@ -40,7 +40,7 @@ def clean_directory(folder: str) -> None :
 @task(log_prints=True)
 def convert_to_parquet(folder: str, file: str, folder_parquet: str) -> str :
     """Convert csv file into parquet and clean some columns"""
-    df = pd.read_csv(f"{folder}/{file}", nrows=1000)
+    df = pd.read_csv(f"{folder}/{file}")
 
     if file == 'trips':
         df.start_date = pd.to_datetime(df.start_date)
