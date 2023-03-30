@@ -1,0 +1,10 @@
+*/dataset/*
+*/logs/*
+*/plugins/*
+*/.ipynb_checkpoints/*
+*/.terraform/*
+
+*.csv
+*.parquet
+*.zip
+*.json
