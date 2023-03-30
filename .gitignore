@@ -3,6 +3,8 @@
 */plugins/*
 */.ipynb_checkpoints/*
 */.terraform/*
+*/__pycache__/*
+*/.kaggle/*
 
 *.csv
 *.parquet

@@ -17,13 +17,15 @@ def download_dataset(folder: str, dataset: str) -> None :
     """Download dataset locally"""
     bash_command = f"cd {folder} && kaggle datasets download -d jeanmidev/{dataset}"
     os.system(bash_command)
+    folder_list = os.listdir(f"{folder}")
+    print(folder_list)
     return
 
 
 @task()
 def unzip_file(folder: str, dataset: str, city: str) -> list :
     """Unzip file into local directory"""
-    bash_command = f"cd {folder} && tar -xf {dataset}.zip"
+    bash_command = f"cd {folder} && unzip {dataset}.zip"
     os.system(bash_command)
     files_list = os.listdir(f"{folder}/{city}")  
     return files_list
@@ -32,7 +34,7 @@ def unzip_file(folder: str, dataset: str, city: str) -> list :
 @task()
 def clean_directory(folder: str) -> None :
     """Delete unnecessary files and directories"""
-    bash_command = f"cd {folder} && del *.zip"
+    bash_command = f"rm -r {folder}"
     os.system(bash_command)
     return        
 
