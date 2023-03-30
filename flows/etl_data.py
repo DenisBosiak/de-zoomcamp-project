@@ -61,11 +61,11 @@ def convert_to_parquet(folder: str, file: str, folder_parquet: str) -> str :
 @task()
 def upload_to_gcs(path: str) -> None:
     """Upload local parquet file to GCS"""
-    credentials = GcpCredentials.load("de-project-credentials")
+    credentials = GcpCredentials.load("de-project")
     #bucket = GcsBucket.load("de-bucket")
     bucket = GcsBucket(
         bucket="dtc-de-project-data-lake",
-        gcp_credentials=credentials
+        gcp_credentials=credentials 
     )
     bucket.upload_from_path(from_path=path, to_path=path)
     return
