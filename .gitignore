@@ -8,4 +8,4 @@
 *.parquet
 *.zip
 *.json
-**.terraform.lock.*
+*.terraform.lock.*
