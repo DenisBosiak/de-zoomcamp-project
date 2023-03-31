@@ -45,8 +45,10 @@ def convert_to_parquet(folder: str, file: str, folder_parquet: str) -> str :
     df = pd.read_csv(f"{folder}/{file}")
 
     if file == 'trips.csv':
-        df.start_date = pd.to_datetime(df.start_date)
-        df.end_date = pd.to_datetime(df.end_date)
+        df['start_time'] = pd.to_datetime(df.start_date)
+        df['end_time'] = pd.to_datetime(df.end_date)
+        df.start_date = df.start_time.dt.date
+        df.end_date = df.end_time.dt.date
         
     if file == 'weather.csv':
         df.date = pd.to_datetime(df.date)
