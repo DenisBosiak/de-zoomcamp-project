@@ -44,11 +44,11 @@ def convert_to_parquet(folder: str, file: str, folder_parquet: str) -> str :
     """Convert csv file into parquet and clean some columns"""
     df = pd.read_csv(f"{folder}/{file}")
 
-    if file == 'trips':
+    if file == 'trips.csv':
         df.start_date = pd.to_datetime(df.start_date)
         df.end_date = pd.to_datetime(df.end_date)
         
-    if file == 'weather':
+    if file == 'weather.csv':
         df.date = pd.to_datetime(df.date)
 
     trips_table = pa.Table.from_pandas(df)
