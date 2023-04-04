@@ -43,4 +43,4 @@ prectot - precipitation<br>
 ## Development Steps
 
 ## Data Visualizations
-For data visualization it was using Looker Studio. Dashboard is [here](https://lookerstudio.google.com/reporting/d61853ad-3d05-48a9-9c89-0a4d443fc1a9).
+Dashboard created by Looker Studio and can found [here](https://lookerstudio.google.com/reporting/d61853ad-3d05-48a9-9c89-0a4d443fc1a9).
