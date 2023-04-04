@@ -18,7 +18,7 @@ It was decided to analyze period from 2011 and 2020: how many trips were, what c
 ## Dataset
 The dataset downloaded from [kaggle](https://www.kaggle.com/datasets/jeanmidev/public-bike-sharing-in-north-america) community. It consist from three csv files: trips, stations and weather (from weather used only 2 columns).
 
-**Trips:**
+**Trips:**<br>
 start_date - start date of the trip<br>
 start_station_code - start station of the trip<br>
 end_date - end date of the trip<br>
@@ -27,14 +27,14 @@ duration_sec - duration of the trip in seconds<br>
 is_member - determine if the trip has been done by a member<br>
 yearid - year of trip
 
-**Stations:**
+**Stations:**<br>
 code - station code<br>
 name - name of the station<br>
 latitude - station latitude<br>
 longitude - station longitude<br>
 yearid - year of used<br>
 
-**Weather:**
+**Weather:**<br>
 date - date<br>
 prectot - precipitation<br>
 
