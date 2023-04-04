@@ -39,7 +39,7 @@ date - date<br>
 prectot - precipitation<br>
 
 ## Data Pipeline Schema 
-
+![Schema](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/pipeline_schema.png)
 ## Development Steps
 
 ## Data Visualizations
