@@ -38,9 +38,12 @@ yearid - year of used<br>
 date - date<br>
 prectot - precipitation<br>
 
-## Data Pipeline Schema 
-![Schema](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/pipeline_schema.png)
+## Data Pipeline Diagram 
+![Diagram](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/pipeline_schema.png)
 ## Development Steps
+1. Signing in Google Cloud Platform and creation "dtc-de-project" project;
+2. Creation infrastructure by using Terraform ([GCS bucket and BigQuery dataset](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/bigquery_1.png));
+3. ...
 
 ## Data Visualizations
 Dashboard created by Looker Studio and can found [here](https://lookerstudio.google.com/reporting/d61853ad-3d05-48a9-9c89-0a4d443fc1a9).
