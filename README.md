@@ -53,15 +53,16 @@ t2m - avg temperature per day<br>
 ## Development Steps
 1. Signing in Google Cloud Platform and creation "dtc-de-project" project;
 2. Creation infrastructure by using Terraform ([GCS bucket and BigQuery dataset](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/bigquery_1.png));
-3. Installing programs from [requirements.txt](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/requirements.txt)
+3. Installing programs from [requirements.txt](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/requirements.txt);
 4. Launching [prefect orion](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/prefect_1.png):
    ```shell
    prefect orion run
    ```
    and running [etl_data.py](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/flows/etl_data.py). After this prefect is creating pipeline which downloading dataset in zip file format, unziping it, cleaning data and converting into parquet files. On the next step it uploading files into storage (GCS bucket);
-5. Creation external tables from uploading files in BigQuery. The sharing_trips table internally creating and partitioning by date format column. The query can be found [here](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/bigquery/create_table.sql);
-6. Data from created tables is transforming into [fact table by using dbt](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/dbt_project_1.png). Dbt project is located in [this repository](https://github.com/DenisBosiak/de-dbt-bike-sharing);
-7. Data visualisatiing by Looker Studio (Google).
+5. Creation docker image by [DockerFile](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/Dockerfile) and [docker_deploy.py](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/flows/docker_deploy.py) for deployment. The image is located [here](https://hub.docker.com/layers/denisbosiak/de-zoomcamp-prefect/bike_sharing/images/sha256-647984c96a6db39decbfa76282bf341087a8479d361713b10735f0fc13a3e92f?context=explore);
+6. Creation external tables from uploading files in BigQuery. The sharing_trips table internally creating and partitioning by date format column. The query can be found [here](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/bigquery/create_table.sql);
+7. Data from created tables is transforming into [fact table by using dbt](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/dbt_project_1.png). Dbt project is located in [this repository](https://github.com/DenisBosiak/de-dbt-bike-sharing);
+8. Data visualisating in Looker Studio (Google).
 
 ## Data Visualizations
 Dashboard created by Looker Studio and can found [here](https://lookerstudio.google.com/reporting/d61853ad-3d05-48a9-9c89-0a4d443fc1a9).
