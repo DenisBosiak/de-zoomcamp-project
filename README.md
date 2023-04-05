@@ -49,11 +49,17 @@ t2m_min - min temperature<br>
 t2m - avg temperature per day<br> 
 
 ## Data Pipeline Diagram 
-![Diagram](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/pipeline_schema.png)
+![Diagram](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/pipeline_diagram.png)
 ## Development Steps
 1. Signing in Google Cloud Platform and creation "dtc-de-project" project;
 2. Creation infrastructure by using Terraform ([GCS bucket and BigQuery dataset](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/bigquery_1.png));
-3. ...
+3. Installing programs from [requirements.txt](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/requirements.txt)
+4. Launching prefect orion:
+   ```shell
+   prefect orion run
+   ```
+   and running [etl_data.py](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/images/prefect_1.png). After this prefect is creating pipeline which downloading dataset in zip file format, unziping it, cleaning data and converting into parquet files. On the next step it uploading files into storage (GCS bucket).
+5. 
 
 ## Data Visualizations
 Dashboard created by Looker Studio and can found [here](https://lookerstudio.google.com/reporting/d61853ad-3d05-48a9-9c89-0a4d443fc1a9).
