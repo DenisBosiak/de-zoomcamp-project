@@ -5,10 +5,10 @@
 */.terraform/*
 */__pycache__/*
 */.kaggle/*
+*/gsc_credentials/*
 
 *.csv
 *.parquet
 *.zip
 *.json
 *.terraform.lock*
-credentials_block*

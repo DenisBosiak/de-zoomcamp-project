@@ -9,6 +9,7 @@ RUN sudo apt install unzip
 
 COPY flows /opt/prefect/flows
 COPY .kaggle /root/.kaggle
+COPY gcp_credentials gcp_credentials
 
 RUN chmod 600 /root/.kaggle/kaggle.json
 RUN mkdir -p /opt/prefect/dataset
