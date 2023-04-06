@@ -59,7 +59,7 @@ t2m - avg temperature per day<br>
    prefect orion run
    ```
    and running [etl_data.py](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/flows/etl_data.py). After this prefect is creating pipeline which downloading dataset in zip file format, unziping it, cleaning data and converting into parquet files. On the next step it uploading files into storage (GCS bucket);
-5. Creation docker image by [DockerFile](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/Dockerfile) and adding docker container block in prefect for development. Created image: [denisbosiak/de-zoomcamp-prefect:bike_sharing](https://hub.docker.com/layers/denisbosiak/de-zoomcamp-prefect/bike_sharing/images/sha256-4b2eadf76a9234bb58186b6c2ca1c85e329f28bc7306c18be703b3bfdbdb4fd7?context=repo). Than creation [docker_deploy.py](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/flows/docker_deploy.py) for launching pipeline in prefect from docker image:
+5. Creation docker image by [DockerFile](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/Dockerfile) and adding docker container block in prefect for development (created image: [denisbosiak/de-zoomcamp-prefect:bike_sharing](https://hub.docker.com/layers/denisbosiak/de-zoomcamp-prefect/bike_sharing/images/sha256-4b2eadf76a9234bb58186b6c2ca1c85e329f28bc7306c18be703b3bfdbdb4fd7?context=repo)). Than creation [docker_deploy.py](https://github.com/DenisBosiak/de-zoomcamp-project/blob/main/flows/docker_deploy.py) for launching pipeline in prefect from docker image. Command for running pipeline:
     ```shell
     prefect deployment run etl-flow/docker-flow
     ```
